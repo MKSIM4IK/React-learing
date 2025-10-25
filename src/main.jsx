@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import Person from './components/Person.jsx';
 
 const person = {
   name: 'John Doe',
@@ -13,18 +14,8 @@ const NewPerson = {
   city: 'Los Angeles'
 };
 
-const Tel = (props) => <a href={`tel:${props.tel}`}>{props.tel}</a>;
-
-const element = (
-  <>
-    <h1>{person.name}</h1>
-    <Tel tel={NewPerson.tel} />
-    <p>{person.city}</p>
-  </>
-);
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {element}
+    <Person {...NewPerson} />
   </StrictMode>
 );
